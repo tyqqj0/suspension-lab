@@ -9,7 +9,7 @@
 - **继续讨论／执行前**：先读 [AGENTS.md](AGENTS.md) 与 [需求与确认范围](docs/requirements.md)。
 - **查术语**：[CONTEXT.md](CONTEXT.md) 区分采集记录、传感器校准、车辆参数拟合与路面输入。
 - **做技术选择**：[设计候选](docs/design.md)；其中明确标注的建议尚未全部获得用户确认。
-- **接入工作交接**：[Beads 交接入口](handoffs/2026-10-14-beads-onboarding/handoff.md)，固定范围与验收在文档，动态工作状态在 Beads。
+- **接入工作交接**：[Beads 使用入口](.beads/README.md) 与 [交接包 r3](handoffs/2026-10-14-beads-onboarding/handoff.md)。总目标为 `sus-nnl`，本次仓库／Beads 接入工作为 `sus-nnl.1`；固定范围与验收在文档，动态状态只从 Beads 读取。
 - **查设计依赖**：[设计问题与阶段门槛](docs/roadmap.md)；Beads 启用后，执行状态与下一步仅查 Beads。
 - **判断结果是否可信**：[验证方案](docs/validation.md)，当前是待具体化的验证基线，不是已通过的测试报告。
 - **查外部证据**：[车型资产与跨平台可行性调研](docs/research/tai3-models-and-platform-feasibility.md)。
@@ -23,7 +23,7 @@
 | 领域术语 | `CONTEXT.md` |
 | 待确认技术方案、工程推论 | `docs/design.md` |
 | 设计问题的依赖理由、阶段退出条件 | `docs/roadmap.md` |
-| 待做工作、状态、责任、阻塞、下一步 | Beads（接入准备见交接草稿；初始化前没有工作编号） |
+| 待做工作、状态、责任、阻塞、下一步 | Beads；从 `bd --readonly show sus-nnl --json` 与 `bd --readonly list --all --json` 读取 |
 | 单次交接范围、固定验收与交付记录 | `handoffs/`，通过真实 Beads 编号关联 |
 | 验证方法与以后要补的判定标准 | `docs/validation.md` |
 | 外部来源、检索范围与限制 | `docs/research/` |
