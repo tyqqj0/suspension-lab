@@ -1,0 +1,15 @@
+.DS_Store
+.env
+.env.*
+!.env.example
+node_modules/
+dist/
+coverage/
+.venv/
+__pycache__/
+*.py[cod]
+
+# 本地原始记录、轨迹、实验导出与未确认许可的资产不进入版本库。
+/local-data/
+/private-assets/
+/exports/
