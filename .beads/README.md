@@ -27,6 +27,12 @@ bd --readonly show sus-nnl --json
 
 Bootstrap 会写本地库，不是只读操作。核对其来源是已发布的 `refs/dolt/data`；失败时不执行 `bd init` 创建空库冒充恢复，不复制运行数据库。
 
+本轮观察到的接入细节：
+
+- Beads 1.3.0 会重写 `config.yaml`，其输出没有末尾换行；本仓库保留工具生成的格式，避免每次 bootstrap 都产生无语义差异。
+- 若提示 `.beads` 权限过宽，可仅在本副本执行 `chmod 700 .beads`；这是本地权限，不随 Git 传播。
+- 新 clone 可能提示未设置 `beads.role`。只读恢复不受影响；确需写入时按真实角色设置仓库级 `git config --local beads.role maintainer` 或 `contributor`，不修改全局配置。角色配置不代替执行或发布授权。
+
 ## 发布与刷新
 
 - 普通文件发布到 Git `main`；工作库发布到同仓库 `refs/dolt/data`。配置见 `config.yaml`，不把专用数据引用合并进代码分支。
